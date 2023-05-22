@@ -142,8 +142,7 @@ func parseTransactionArray(tx []Transaction) []string {
 		fbalance.SetString(strconv.Itoa(gasFee))
 		fbalance = fbalance.Quo(fbalance, big.NewFloat(math.Pow10(18)))
 		transJSON, _ := json.Marshal(restx)
-		bytegasFee := `,"gas_fee_to_Miner:"` + fbalance.String()
-		//bytegasFee +=
+		bytegasFee := `,"gas_fee_to_Miner":` + fbalance.String()
 		transJSON = append(append(transJSON[:len(transJSON)-4], []byte(bytegasFee)...), transJSON[len(transJSON)-4:]...)
 		resTx = append(resTx, string(transJSON))
 	}
