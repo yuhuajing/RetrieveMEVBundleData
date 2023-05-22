@@ -144,9 +144,24 @@ func parseTransactionArray(tx []Transaction) []string {
 		transJSON, _ := json.Marshal(restx)
 		bytegasFee := `,"gas_fee_to_Miner":` + fbalance.String()
 		transJSON = append(append(transJSON[:len(transJSON)-1], []byte(bytegasFee)...), transJSON[len(transJSON)-1:]...)
-		resTx = append(resTx, string(transJSON))
+		//resTx = append(resTx, string(transJSON))
+		ntransJSON, _ := prettyPrint(string(transJSON))
+		resTx = append(resTx, ntransJSON)
 	}
 	return resTx
+}
+
+func prettyPrint(str string) (string, error) {
+	var obj map[string]interface{}
+	err := json.Unmarshal([]byte(str), &obj)
+	if err != nil {
+		return "", err
+	}
+	data, err := json.MarshalIndent(obj, "", "  ")
+	if err != nil {
+		return "", err
+	}
+	return string(data), nil
 }
 
 func getMevInfofromBlock(blockNumber int) Blocks {
