@@ -94,6 +94,7 @@ responses:
 "to_address":"0x6b75d8AF000000e20B7a7DDf000Ba900b4009A80","gas_used":94922,
 "gas_price":"94203450402","eth_sent_to_fee_recipient":"0",
 "fee_recipient_eth_diff":"8941979919058644","gas_fee_to_Miner":0.008941979919}]
+
 [{"transaction_hash":"0xd3445a14a4e5109a0089ddefebb97489ef59d214a1a962c29c1f4921fdea31dd",
 "bundle_type":"flashbots","tx_index":0,"bundle_index":8,"block_number":17291332,
 "eoa_address":"0xae2Fc483527B8EF99EB5D9B44875F005ba1FaE13",
