@@ -9,7 +9,7 @@ Get flashbots MEV data by API "https://blocks.flashbots.net/v1/blocks?block_numb
 responsed data
 ```json
 {"transaction_hash":"0xa8ed3012283f5c8cd6b7509c86b377a4301bc0095c428a02144229c500039ff3",
-"bundle_type":"flashbots",
+"bundle_type":"flashbots", // mempool: builder自己从内存池拿到的交易，和bundle一起构建区块。 flashbots:build 把 searcher提交的bundle纳入区块。  builder把区块交给relay，relay按照矿工收益排序，挑选最佳区块提交proposer。
 "tx_index":1,
 "bundle_index":8,
 "block_number":17291332,
